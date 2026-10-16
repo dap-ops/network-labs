@@ -1,0 +1,37 @@
+# 01 - Basic Device Configuration & Boot System
+
+## 1. Security & Device Setup
+```cisco
+enable
+configure terminal
+
+! Hostname & Enkripsi Password
+hostname Sw-Core-01
+enable secret class
+service password-encryption
+
+! Console & Remote Access (VTY)
+line console 0
+ password cisco
+ login
+exit
+
+line vty 0 4
+ password cisco
+ login
+exit
+
+! Banner Warning
+banner motd " Authorized Access Only! "
+
+! Mengatur IOS image file saat startup
+boot system flash:c2960-lanbasek9-mz.150-2.SE4.bin
+
+! Simpan Konfigurasi
+end
+copy running-config startup-config
+
+! Verifikasi Hasil Config
+show running-config
+show boot
+show version
