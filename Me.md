@@ -1,3 +1,2 @@
-# network-labs
-#Cisco Packet-tracer
+# network-labs - Cisco PacketTracer
 My Journey
